@@ -21,7 +21,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
             Integer k = map.get(c); 
             if (k != null) {
                 i = Math.max(i, k + 1);
-        	}
+            }
             maxLen = Math.max(maxLen, j - i + 1);
             map.put(c, j);
         }
