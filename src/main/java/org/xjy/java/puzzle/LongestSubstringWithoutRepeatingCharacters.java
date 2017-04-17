@@ -12,23 +12,23 @@ import java.util.HashMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    public static int lengthOfLongestSubstring(String s) {
-        int maxLen = 0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        //sliding window
-        for (int i = 0, j = 0, n = s.length(); j < n; j++) {
-            char c = s.charAt(j);
-            Integer k = map.get(c);
-            if (k != null) {
-                i = Math.max(i, k + 1);
-            }
-            maxLen = Math.max(maxLen, j - i + 1);
-            map.put(c, j);
-        }
-        return maxLen;
-    }
+	public static int lengthOfLongestSubstring(String s) {
+		int maxLen = 0;
+		HashMap<Character, Integer> map = new HashMap<>();
+		// sliding window
+		for (int i = 0, j = 0, n = s.length(); j < n; j++) {
+			char c = s.charAt(j);
+			Integer k = map.get(c);
+			if (k != null) {
+				i = Math.max(i, k + 1);
+			}
+			maxLen = Math.max(maxLen, j - i + 1);
+			map.put(c, j);
+		}
+		return maxLen;
+	}
 
-    public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("abcabcbb"));
-    }
+	public static void main(String[] args) {
+		System.out.println(lengthOfLongestSubstring("abcabcbb"));
+	}
 }

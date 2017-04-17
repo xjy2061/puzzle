@@ -18,42 +18,42 @@ public class MedianOfTwoSortedArrays {
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int m = nums1.length;
 		int n = nums2.length;
-        int l = m + n;
-        int index1 = l / 2;
-        int index2 = -1;
-        if (l % 2 == 0) {
-        	index1--;
-        	index2 = index1 + 1;
-        }
-        int i = 0;
-        int j = 0;
-        int p = 0;
-        double median = 0;
-        while (i < m || j < n) {
-            int current;
-            if (j >= n || (i < m && nums1[i] <= nums2[j])) {
-                current = nums1[i];
-                i++;
-            } else {
-                current = nums2[j];
-                j++;
-            }
-            if (p == index1) {
-                median = current;
-                if (index2 == -1) {
-                	break;
-                }
-            }
-            if (p == index2) {
-                median = (median + current) / 2;
-                break;
-            }
-            p++;
-        }
-        return median;
-    }
-	
+		int l = m + n;
+		int index1 = l / 2;
+		int index2 = -1;
+		if (l % 2 == 0) {
+			index1--;
+			index2 = index1 + 1;
+		}
+		int i = 0;
+		int j = 0;
+		int p = 0;
+		double median = 0;
+		while (i < m || j < n) {
+			int current;
+			if (j >= n || (i < m && nums1[i] <= nums2[j])) {
+				current = nums1[i];
+				i++;
+			} else {
+				current = nums2[j];
+				j++;
+			}
+			if (p == index1) {
+				median = current;
+				if (index2 == -1) {
+					break;
+				}
+			}
+			if (p == index2) {
+				median = (median + current) / 2;
+				break;
+			}
+			p++;
+		}
+		return median;
+	}
+
 	public static void main(String[] args) {
-		System.out.println(findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}));
+		System.out.println(findMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }));
 	}
 }
