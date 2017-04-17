@@ -94,5 +94,4 @@ public class RemoveNthNodeFromEndOfList {
 			val = x;
 		}
 	}
-	
 }
