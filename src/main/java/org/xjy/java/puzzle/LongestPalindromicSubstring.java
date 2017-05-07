@@ -21,7 +21,7 @@ public class LongestPalindromicSubstring {
 			return "";
 		}
 		
-        //add boundaries
+		//add boundaries
 		int length = s.length();
 		char[] s2 = new char[2 * length + 1];
 		for (int i = 0; i < length; i++) {
