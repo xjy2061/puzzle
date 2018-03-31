@@ -22,7 +22,7 @@ import java.util.HashMap;
  */
 public class RemoveNthNodeFromEndOfList {
 
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
+	private static ListNode removeNthFromEnd(ListNode head, int n) {
 		ListNode dummy = new ListNode(0);
 		dummy.next = head;
 		ListNode first = dummy;
@@ -86,7 +86,7 @@ public class RemoveNthNodeFromEndOfList {
 		printListNode(head);
 	}
 
-	public static class ListNode {
+	static class ListNode {
 		int val;
 		ListNode next;
 

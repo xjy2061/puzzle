@@ -15,7 +15,8 @@ package org.xjy.java.puzzle;
  * The median is (2 + 3)/2 = 2.5
  */
 public class MedianOfTwoSortedArrays {
-	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
+	private static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int m = nums1.length;
 		int n = nums2.length;
 		int l = m + n;
@@ -54,6 +55,6 @@ public class MedianOfTwoSortedArrays {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(findMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }));
+		System.out.println(findMedianSortedArrays(new int[]{1, 2}, new int[]{3, 4}));
 	}
 }

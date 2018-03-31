@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class LongestPalindromicSubstring {
 	
-	public static String longestPalindrome(String s) {
+	private static String longestPalindrome(String s) {
 		if (s == null || s.length() == 0) {
 			return "";
 		}

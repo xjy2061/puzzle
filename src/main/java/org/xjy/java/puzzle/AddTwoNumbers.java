@@ -20,7 +20,7 @@ package org.xjy.java.puzzle;
  */
 public class AddTwoNumbers {
 
-	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+	private static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode n1 = l1;
 		ListNode n2 = l2;
 		int carry = 0;
@@ -83,7 +83,7 @@ public class AddTwoNumbers {
 		System.out.println(sb.toString());
 	}
 
-	public static class ListNode {
+	static class ListNode {
 		int val;
 		ListNode next;
 

@@ -8,7 +8,8 @@ package org.xjy.java.puzzle;
  * Note: The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows. 
  */
 public class ReverseInteger {
-	public static int reverse(int x) {
+
+	private static int reverse(int x) {
 		boolean negative = x < 0;
 		x = Math.abs(x);
 		long y = 0;

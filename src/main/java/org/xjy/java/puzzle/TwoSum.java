@@ -13,8 +13,9 @@ import java.util.HashMap;
  * return [0, 1].
  */
 public class TwoSum {
-	public static int[] twoSum(int[] nums, int target) {
-		HashMap<Integer, Integer> lookupMap = new HashMap<Integer, Integer>();
+
+	private static int[] twoSum(int[] nums, int target) {
+		HashMap<Integer, Integer> lookupMap = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
 			int num = nums[i];
 			Integer position = lookupMap.get(num);

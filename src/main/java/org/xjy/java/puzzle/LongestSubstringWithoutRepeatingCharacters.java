@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
 
-	public static int lengthOfLongestSubstring(String s) {
+	private static int lengthOfLongestSubstring(String s) {
 		int maxLen = 0;
 		HashMap<Character, Integer> map = new HashMap<>();
 		// sliding window
