@@ -1,5 +1,6 @@
 package org.xjy.java.puzzle;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class FairSwapCandy {
@@ -56,7 +57,7 @@ public class FairSwapCandy {
     }
 
     public static void main(String[] args) {
-        System.out.println(fairCandySwap(new int[]{1, 1}, new int[]{2, 2}));
-        System.out.println(fairCandySwap(new int[]{1, 2}, new int[]{2, 3}));
+        System.out.println(Arrays.toString(fairCandySwap(new int[]{1, 1}, new int[]{2, 2})));
+        System.out.println(Arrays.toString(fairCandySwap(new int[]{1, 2}, new int[]{2, 3})));
     }
 }
