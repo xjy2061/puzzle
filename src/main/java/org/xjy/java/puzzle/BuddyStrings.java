@@ -29,15 +29,15 @@ package org.xjy.java.puzzle;
  */
 public class BuddyStrings {
 
-    private static boolean buddyStrings(String a, String b) {
-        int length = a.length();
-        if (length != b.length()) {
+    private static boolean buddyStrings(String A, String B) {
+        int length = A.length();
+        if (length != B.length()) {
             return false;
         }
-        if (a.equals(b)) {
+        if (A.equals(B)) {
             int[] count = new int[26];
             for (int i = 0; i < length; i++) {
-                count[a.charAt(i) - 'a']++;
+                count[A.charAt(i) - 'a']++;
             }
             for (int i : count) {
                 if (i > 1) {
@@ -49,7 +49,7 @@ public class BuddyStrings {
             int first = -1;
             int second = -1;
             for (int i = 0; i < length; i++) {
-                if (a.charAt(i) != b.charAt(i)) {
+                if (A.charAt(i) != B.charAt(i)) {
                     if (first == -1) {
                         first = i;
                     } else if (second == -1) {
@@ -59,7 +59,7 @@ public class BuddyStrings {
                     }
                 }
             }
-            return second != -1 && a.charAt(first) == b.charAt(second) && a.charAt(second) == b.charAt(first);
+            return second != -1 && A.charAt(first) == B.charAt(second) && A.charAt(second) == B.charAt(first);
         }
     }
 
