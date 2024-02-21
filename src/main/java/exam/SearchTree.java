@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class SearchTree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        String[] input = scanner.nextLine().split(",");
-        String[] input = "20,null,40,34,70,21,null,55,78".split(",");
+        String[] input = scanner.nextLine().split(",");
         Node root =  new Node(Integer.parseInt(input[0]));
         LinkedList<Node> nodes = new LinkedList<>();
         nodes.add(root);
