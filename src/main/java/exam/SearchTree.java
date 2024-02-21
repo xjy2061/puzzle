@@ -6,21 +6,24 @@ import java.util.Scanner;
 public class SearchTree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] input = scanner.nextLine().split(",");
-        Node root =  input[0].equals("null") ? null : new Node(Integer.parseInt(input[0]));
+//        String[] input = scanner.nextLine().split(",");
+        String[] input = "20,null,40,34,70,21,null,55,78".split(",");
+        Node root =  new Node(Integer.parseInt(input[0]));
         LinkedList<Node> nodes = new LinkedList<>();
         nodes.add(root);
         for (int i = 1, len = input.length; i < len; i += 2) {
             Node node = nodes.remove();
             Node left = input[i].equals("null") ? null : new Node(Integer.parseInt(input[i]));
-            int next = i + i;
+            int next = i + 1;
             Node right = (next >= len || input[next].equals("null")) ? null : new Node(Integer.parseInt(input[next]));
-            if (node != null) {
-                node.left = left;
-                node.right = right;
+            node.left = left;
+            node.right = right;
+            if (left != null) {
+                nodes.add(left);
             }
-            nodes.add(left);
-            nodes.add(right);
+            if (right != null) {
+                nodes.add(right);
+            }
         }
 
         System.out.println(isBST(root, Long.MIN_VALUE, Long.MAX_VALUE));
