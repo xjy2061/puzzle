@@ -22,7 +22,12 @@ public class SwapSum {
             s2 += array2[i];
             set2.add(array2[i]);
         }
-        long delta = (s1 - s2) / 2;
+        long delta = s1 - s2;
+        if (delta % 2 != 0) {
+            System.out.println("");
+            return;
+        }
+        delta = (s1 - s2) / 2;
         for (int a : array1) {
             int b = (int) (a - delta);
             if (set2.contains(b)) {
