@@ -32,22 +32,22 @@ public class StackList {
         System.out.println(String.join(",", ret));
     }
 
-    public static class MyQueue {
-        private final LinkedList<Integer> list = new LinkedList<>();
-        public void push(int x) {
+    static class MyQueue {
+        final LinkedList<Integer> list = new LinkedList<>();
+        void push(int x) {
             list.add(x);
         }
 
-        public int pop() {
+        int pop() {
             return list.pop();
         }
 
         @SuppressWarnings("DataFlowIssue")
-        public int peak() {
+        int peak() {
             return list.peek();
         }
 
-        public boolean empty() {
+        boolean empty() {
             return list.isEmpty();
         }
     }

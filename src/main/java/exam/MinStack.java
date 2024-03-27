@@ -32,8 +32,8 @@ public class MinStack {
         System.out.println(String.join(",", ret));
     }
 
-    private static class MyStack {
-        private final LinkedList<Integer> list = new LinkedList<>();
+    static class MyStack {
+        final LinkedList<Integer> list = new LinkedList<>();
         void push(int val) {
             list.push(val);
         }

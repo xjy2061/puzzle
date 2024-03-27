@@ -59,7 +59,7 @@ public class MergeLinkedList {
         }
     }
 
-    private static class Node {
+    static class Node {
         String addr;
         String data;
         String next;
