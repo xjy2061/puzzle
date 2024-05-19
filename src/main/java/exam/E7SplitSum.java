@@ -3,7 +3,7 @@ package exam;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SplitSum {
+public class E7SplitSum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();

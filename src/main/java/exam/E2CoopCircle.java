@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class CoopCircle {
+public class E2CoopCircle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] rows = scanner.nextLine().split("\\|");

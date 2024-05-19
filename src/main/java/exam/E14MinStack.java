@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class MinStack {
+public class E14MinStack {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] ops = scanner.nextLine().split(",");

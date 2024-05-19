@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class MergeLinkedList {
+public class H2MergeLinkedList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Node> map = new HashMap<>();

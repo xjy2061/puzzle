@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class MountainCount {
+public class E3MountainCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] size = scanner.nextLine().split(" ");

@@ -3,7 +3,7 @@ package exam;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class KeyAndRooms {
+public class M4KeyAndRooms {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

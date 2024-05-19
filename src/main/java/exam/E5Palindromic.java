@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class Palindromic {
+public class E5Palindromic {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

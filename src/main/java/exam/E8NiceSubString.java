@@ -3,7 +3,7 @@ package exam;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class NiceSubString {
+public class E8NiceSubString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class StackList {
+public class E1StackList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] ops = scanner.nextLine().split(",");

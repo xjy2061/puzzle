@@ -3,7 +3,7 @@ package exam;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class SearchTree {
+public class E10SearchTree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");

@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class MinFlips {
+public class M2MinFlips {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");

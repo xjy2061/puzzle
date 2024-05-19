@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class Jump {
+public class E4Jump {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();

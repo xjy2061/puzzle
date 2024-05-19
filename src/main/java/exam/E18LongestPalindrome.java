@@ -2,7 +2,7 @@ package exam;
 
 import java.util.Scanner;
 
-public class LongestPalindrome {
+public class E18LongestPalindrome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();

@@ -3,7 +3,7 @@ package exam;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class MaxFactorSize {
+public class H1MaxFactorSize {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
