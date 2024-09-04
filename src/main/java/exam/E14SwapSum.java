@@ -24,7 +24,7 @@ public class E14SwapSum {
         }
         long delta = s1 - s2;
         if (delta % 2 != 0) {
-            System.out.println("");
+            System.out.println();
             return;
         }
         delta = (s1 - s2) / 2;
@@ -35,6 +35,6 @@ public class E14SwapSum {
                 return;
             }
         }
-        System.out.println("");
+        System.out.println();
     }
 }
