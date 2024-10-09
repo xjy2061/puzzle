@@ -10,7 +10,7 @@ public class E22CharFreqSort {
         for (char c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        List<Map.Entry<Character, Integer>> list = new ArrayList<Map.Entry<Character, Integer>>(map.entrySet());
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(map.entrySet());
         list.sort((a, b) -> {
             if (!a.getValue().equals(b.getValue())) {
                 return b.getValue() - a.getValue();
