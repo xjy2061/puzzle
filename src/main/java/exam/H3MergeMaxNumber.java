@@ -26,12 +26,14 @@ public class H3MergeMaxNumber {
                 max = curMax;
             }
         }
+        StringBuilder ret = new StringBuilder();
         for (int i = 0; i < max.length; i++) {
             if (i != 0) {
-                System.out.print(",");
+                ret.append(",");
             }
-            System.out.print(max[i]);
+            ret.append(max[i]);
         }
+        System.out.println(ret);
     }
 
     static int[] maxSubArray(int[] array, int k) {

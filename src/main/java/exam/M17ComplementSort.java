@@ -19,12 +19,14 @@ public class M17ComplementSort {
             }
             return Integer.compare(complement1, complement2);
         });
+        StringBuilder ret = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
             if (i != 0) {
-                System.out.print(",");
+                ret.append(",");
             }
-            System.out.print(arr[i]);
+            ret.append(arr[i]);
         }
+        System.out.println(ret);
     }
 
     static int getComplement(int num) {
