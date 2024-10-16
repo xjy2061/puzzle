@@ -3,7 +3,7 @@ package exam;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class H1MaxFactorSize {
+public class H2MaxFactorSize {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -74,11 +74,11 @@ public class H1MaxFactorSize {
         void union(int x, int y) {
             int rootX = find(x);
             int rootY = find(y);
-            if (rootX > rootY) {
+            if (rank[rootX] > rank[rootY]) {
                 parent[rootY] = rootX;
             } else {
                 parent[rootX] = rootY;
-                if (rootX == rootY) {
+                if (rank[rootX] == rank[rootY]) {
                     rank[rootY]++;
                 }
             }

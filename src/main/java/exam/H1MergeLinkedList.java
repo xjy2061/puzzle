@@ -1,17 +1,15 @@
 package exam;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
-public class H2MergeLinkedList {
+public class H1MergeLinkedList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HashMap<String, Node> map = new HashMap<>();
         String[] input = scanner.nextLine().split(" ");
         String addr1 = input[0];
         String addr2 = input[1];
         int count = Integer.parseInt(input[2]);
+        HashMap<String, Node> map = new HashMap<>();
         for (int i = 0; i < count; i++) {
             String[] node = scanner.nextLine().split(" ");
             map.put(node[0], new Node(node[0], node[1], node[2]));
@@ -21,12 +19,12 @@ public class H2MergeLinkedList {
         while(!addr1.equals("-1")) {
             Node node = map.get(addr1);
             list1.add(node);
-            addr1 = node.next;
+            addr1 = node.nextAddress;
         }
         while(!addr2.equals("-1")) {
             Node node = map.get(addr2);
             list2.add(node);
-            addr2 = node.next;
+            addr2 = node.nextAddress;
         }
         int len1 = list1.size();
         int len2 = list2.size();
@@ -43,31 +41,31 @@ public class H2MergeLinkedList {
             Node node2 = null;
             if (i % 2 == 1 && j >= 0) {
                 node2 = list2.get(j);
-                node1.next = node2.addr;
+                node1.nextAddress = node2.address;
                 int next = i + 1;
                 if (next < len1) {
-                    node2.next = list1.get(next).addr;
+                    node2.nextAddress = list1.get(next).address;
                 } else {
-                    node2.next = "-1";
+                    node2.nextAddress = "-1";
                 }
                 j--;
             }
-            System.out.println(node1.addr + " " + node1.data + " " + node1.next);
+            System.out.println(node1.address + " " + node1.data + " " + node1.nextAddress);
             if (node2 != null) {
-                System.out.println(node2.addr + " " + node2.data + " " + node2.next);
+                System.out.println(node2.address + " " + node2.data + " " + node2.nextAddress);
             }
         }
     }
 
     static class Node {
-        String addr;
+        String address;
         String data;
-        String next;
+        String nextAddress;
 
-        Node(String addr, String data, String next) {
-            this.addr = addr;
+        Node(String address, String data, String nextAddress) {
+            this.address = address;
             this.data = data;
-            this.next = next;
+            this.nextAddress = nextAddress;
         }
     }
 }
