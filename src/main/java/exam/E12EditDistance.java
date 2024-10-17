@@ -2,6 +2,13 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * 给定一个源串和目标串，能够对源串进行如下操作：
+ * 在给定位置上插入一个字符
+ * 替换任意字符
+ * 删除任意字符
+ * 写一个程序，返回最小操作数，使得对源串进行这些操作后等于目标串
+ */
 public class E12EditDistance {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

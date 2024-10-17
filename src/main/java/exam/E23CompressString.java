@@ -2,6 +2,9 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * 请编写一个字符串压缩程序，将字符串中连续出席的重复字母进行压缩，并输出压缩后的字符串。
+ */
 public class E23CompressString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

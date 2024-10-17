@@ -3,6 +3,14 @@ package exam;
 import java.util.Scanner;
 import java.util.TreeSet;
 
+/**
+ * 给你一个整数数组 nums 和两个整数 indexDiff 和 valueDiff 。
+ * 找出满足下述条件的下标对 (i, j)：
+ * i != j
+ * abs(i - j) <= indexDiff
+ * abs(nums[i] - nums[j]) <= valueDiff
+ * 如果存在，返回 1 ；否则，返回 0
+ */
 public class M12ContainsDuplicate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

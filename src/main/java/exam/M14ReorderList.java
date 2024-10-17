@@ -3,6 +3,11 @@ package exam;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * 给定一个单链表L1→L2→⋯→Ln−1→Ln
+ * 请编写程序将链表重新排列为Ln→L1→Ln−1→L2→…
+ * 例如：给定L为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3
+ */
 public class M14ReorderList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

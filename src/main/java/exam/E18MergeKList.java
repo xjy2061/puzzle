@@ -3,6 +3,10 @@ package exam;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * 给定一个链表数组，每个链表都已经按升序排列。
+ * 请将所有链表合并到一个升序链表中，返回合并后的链表。
+ */
 public class E18MergeKList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

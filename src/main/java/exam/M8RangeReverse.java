@@ -3,6 +3,13 @@ package exam;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * 给定一个常数 K 和一个单链表 L，请你在单链表上每 K 个元素做一次反转，并输出反转完成后的链表。
+ * 如果链表最后一部分不足 K 个元素，则最后一部分不翻转。
+ * 例如，假设 L 为 1→2→3→4→5→6
+ * 如果 K=3，则你应该输出 3→2→1→6→5→4
+ * 如果 K=4，则你应该输出 4→3→2→1→5→6
+ */
 public class M8RangeReverse {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

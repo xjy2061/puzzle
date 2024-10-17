@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/**
+ * 给定一个二叉树的根节点root，返回它的中序遍历结果。
+ */
 public class M11InorderTraversal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

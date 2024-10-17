@@ -3,6 +3,9 @@ package exam;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * 给你一个字符串 s ，请你去除字符串中重复的字符，使得每个字符只出现一次。需保证返回结果的字典序最小（要求不能打乱其他字符的相对位置）。
+ */
 public class E21DelDupChar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

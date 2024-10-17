@@ -2,6 +2,11 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * Drizzle 前往山地统计大山的数目，现在收到这片区域的地图，地图中用0（平地）和1（山峰）绘制而成，请你帮忙计算其中的大山数目。
+ * 山总是被平地四面包围着，每一座山只能在水平或垂直方向上连接相邻的山峰而形成。一座山峰四面被平地包围，这个山峰也算一个大山。
+ * 另外，你可以假设地图的四面都被平地包围着。
+ */
 public class E2MountainCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

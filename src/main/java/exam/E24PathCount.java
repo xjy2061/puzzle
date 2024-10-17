@@ -2,6 +2,11 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * 一个机器人位于一个m*n网格的左上角 （起始点在下图中标记为 “Start” ）
+ * 机器人每次只能向下或者向右移动一步（每个格子只能走一次）
+ * 机器人试图达到网格的右下角（在下图中标记为 “Finish” ）
+ */
 public class E24PathCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

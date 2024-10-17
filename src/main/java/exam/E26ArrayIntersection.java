@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * 给两个整型数组 nums1 和 nums2 ，返回 它们的交集 。
+ * 输出结果中的每个元素一定是 唯一 的。输出结果按照从小到大排列。
+ * 例如： nums1的内容是[1,2,6,5,9,8]，nums2的内容是[3,9,6]，最后输出的结果是[6,9]。
+ */
 public class E26ArrayIntersection {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

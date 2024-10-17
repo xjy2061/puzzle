@@ -2,6 +2,13 @@ package exam;
 
 import java.util.*;
 
+/**
+ * 给定两个链表L1=a1→a2→⋯→an−1→an 和L2=b1→b2→⋯→bm−1→bm，其中n≥2m。
+ * 需要将较短的链表L2反转并合并到较长的链表L1中
+ * 使得合并后的链表如下形式：a1→a2→bm→a3→a4→bm−1→…
+ * 合并规则：在长链表中每隔两个元素，将短链表中的元素倒序插入。
+ * 例如：给定一个较长链表1→2→3→4→5，另外一个较短链表6→7，需要输出1→2→7→3→4→6→5
+ */
 public class H1MergeLinkedList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

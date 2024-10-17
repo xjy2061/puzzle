@@ -3,6 +3,12 @@ package exam;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * 给出一个升序排序的链表 L，删除链表中重复2次以上出现的元素，只保留原链表中出现一次或重复2次 的元素。
+ * 例如：
+ * 给出的链表为 1→2→3→3→4→4→4→4→5, 返回 1→2→3→3→5.
+ * 给出的链表为1→1→1→2→3, 返回 2→3.
+ */
 public class M13DelDuplicate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

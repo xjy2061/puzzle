@@ -2,6 +2,10 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * 给定一个非负整数数组nums，最初位于数组的第一个位置；数组中的每个元素表示你在该位置可以跳跃的最大长度。
+ * 请确定是否可以到达最后一个位置。
+ */
 public class M9JumpDistance {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

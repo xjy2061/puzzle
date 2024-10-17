@@ -2,6 +2,9 @@ package exam;
 
 import java.util.Scanner;
 
+/**
+ * 给定一个整数数组，找出总和最大的连续数列，并返回总和。
+ */
 public class M18MaxSubArraySum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
