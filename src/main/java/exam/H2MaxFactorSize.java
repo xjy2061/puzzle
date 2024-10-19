@@ -10,7 +10,6 @@ import java.util.Scanner;
  * 返回构图中最大连通组件的大小。
  */
 public class H2MaxFactorSize {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(" ");
@@ -18,40 +17,41 @@ public class H2MaxFactorSize {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = Integer.parseInt(input[i]);
         }
-        UnionFind uf = new UnionFind(nums.length);
+
         HashMap<Integer, Integer> map = new HashMap<>();
+        UnionFind uf = new UnionFind(nums.length);
         for (int i = 0; i < nums.length; i++) {
-            int x = nums[i];
-            for (int j = 2; j * j <= x; j++) {
-                if (x % j == 0) {
-                    Integer index = map.get(j);
-                    if (index != null) {
-                        uf.union(i, index);
+            int num = nums[i];
+            for (int j = 2; j * j <= num; j++) {
+                if (num % j == 0) {
+                    Integer pos = map.get(j);
+                    if (pos != null) {
+                        uf.union(i, pos);
                     } else {
                         map.put(j, i);
                     }
-                    int factor = x / j;
-                    index = map.get(factor);
-                    if (index != null) {
-                        uf.union(i, index);
+                    int factor = num / j;
+                    pos = map.get(factor);
+                    if (pos != null) {
+                        uf.union(i, pos);
                     } else {
                         map.put(factor, i);
                     }
                 }
             }
-            Integer index = map.get(x);
-            if (index != null) {
-                uf.union(i, index);
+            Integer pos = map.get(num);
+            if (pos != null) {
+                uf.union(i, pos);
             } else {
-                map.put(x, i);
+                map.put(num, i);
             }
         }
+        map.clear();
         int max = 0;
-        HashMap<Integer, Integer> counts = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int root = uf.find(i);
-            int count = counts.getOrDefault(root, 0) + 1;
-            counts.put(root, count);
+            int count = map.getOrDefault(root, 0) + 1;
+            map.put(root, count);
             max = Math.max(max, count);
         }
         System.out.println(max);
@@ -70,22 +70,22 @@ public class H2MaxFactorSize {
             }
         }
 
-        int find(int x) {
-            if (x != parent[x]) {
-                parent[x] = find(parent[x]);
+        int find(int i) {
+            if (parent[i] != i) {
+                parent[i] = find(parent[i]);
             }
-            return parent[x];
+            return parent[i];
         }
 
-        void union(int x, int y) {
-            int rootX = find(x);
-            int rootY = find(y);
-            if (rank[rootX] > rank[rootY]) {
-                parent[rootY] = rootX;
+        void union(int a, int b) {
+            int rootA = find(a);
+            int rootB = find(b);
+            if (rank[rootA] > rank[rootB]) {
+                parent[rootB] = rootA;
             } else {
-                parent[rootX] = rootY;
-                if (rank[rootX] == rank[rootY]) {
-                    rank[rootY]++;
+                parent[rootA] = rootB;
+                if (rank[rootA] == rank[rootB]) {
+                    rank[rootB]++;
                 }
             }
         }

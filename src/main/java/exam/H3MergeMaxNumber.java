@@ -11,47 +11,50 @@ public class H3MergeMaxNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");
-        int[] arr1 = new int[input.length];
-        for (int i = 0; i < arr1.length; i++) {
-            arr1[i] = Integer.parseInt(input[i]);
+        int[] nums1 = new int[input.length];
+        for (int i = 0; i < nums1.length; i++) {
+            nums1[i] = Integer.parseInt(input[i]);
         }
         input = scanner.nextLine().split(",");
-        int[] arr2 = new int[input.length];
-        for (int i = 0; i < arr2.length; i++) {
-            arr2[i] = Integer.parseInt(input[i]);
+        int[] nums2 = new int[input.length];
+        for (int i = 0; i < nums2.length; i++) {
+            nums2[i] = Integer.parseInt(input[i]);
         }
         int k = scanner.nextInt();
 
+        int m = nums1.length;
+        int n = nums2.length;
         int[] max = new int[k];
-        for (int i = Math.max(0, k - arr2.length); i < Math.min(k, arr1.length); i++) {
-            int[] max1 = maxSubArray(arr1, i);
-            int[] max2 = maxSubArray(arr2, k - i);
-            int[] curMax = merge(max1, max2);
-            if (greater(curMax, 0, max, 0)) {
-                max = curMax;
+        for (int i = Math.max(0, k - n); i < Math.min(k, m); i++) {
+            int[] sub1 = maxSubArray(nums1, i);
+            int[] sub2 = maxSubArray(nums2, k - i);
+            int[] merged = merge(sub1, sub2);
+            if (greater(merged, 0, max, 0)) {
+                max = merged;
             }
         }
-        StringBuilder ret = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < max.length; i++) {
             if (i != 0) {
-                ret.append(",");
+                sb.append(",");
             }
-            ret.append(max[i]);
+            sb.append(max[i]);
         }
-        System.out.println(ret);
+        System.out.println(sb);
     }
 
-    static int[] maxSubArray(int[] array, int k) {
+    static int[] maxSubArray(int[] a, int k) {
         int[] ret = new int[k];
+        int n = a.length;
         int top = 0;
-        int remain = array.length - k;
-        for (int i : array) {
-            while(top > 0 && ret[top - 1] < i && remain > 0) {
+        int remain = n - k;
+        for (int i = 0; i < n; i++) {
+            while (top > 0 && ret[top - 1] < a[i] && remain > 0) {
                 top--;
                 remain--;
             }
             if (top < k) {
-                ret[top++] = i;
+                ret[top++] = a[i];
             } else {
                 remain--;
             }
@@ -60,31 +63,35 @@ public class H3MergeMaxNumber {
     }
 
     static int[] merge(int[] a, int[] b) {
-        int[] ret = new int[a.length + b.length];
+        int m = a.length;
+        int n = b.length;
+        int[] ret = new int[m + n];
         int i = 0;
         int j = 0;
         int k = 0;
-        while (i < a.length && j < b.length) {
+        while (i < m && j < n) {
             if (greater(a, i, b, j)) {
                 ret[k++] = a[i++];
             } else {
                 ret[k++] = b[j++];
             }
         }
-        while (i < a.length) {
+        while (i < m) {
             ret[k++] = a[i++];
         }
-        while (j < b.length) {
+        while (j < n) {
             ret[k++] = b[j++];
         }
         return ret;
     }
 
     static boolean greater(int[] a, int i, int[] b, int j) {
-        while (i < a.length && j < b.length && a[i] == b[j]) {
+        int m = a.length;
+        int n = b.length;
+        while (i < m && j < n && a[i] == b[j]) {
             i++;
             j++;
         }
-        return j == b.length || (i < a.length && a[i] > b[j]);
+        return j == n || (i < m && a[i] > b[j]);
     }
 }

@@ -15,24 +15,25 @@ public class H9LongestAwesomeSubstring {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
+
         int state = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
         int max = 0;
-        HashMap<Integer, Integer> seen = new HashMap<>();
-        seen.put(0, -1);
-        for (int i = 0, len = s.length(); i < len; i++) {
+        for (int i = 0; i < s.length(); i++) {
             int digital = s.charAt(i) - '0';
-            state ^= (1 << digital);
-            Integer pos = seen.get(state);
-            if (pos == null) {
-                seen.put(state, i);
-            } else {
+            state ^= 1 << digital;
+            Integer pos = map.get(state);
+            if (pos != null) {
                 max = Math.max(max, i - pos);
+            } else {
+                map.put(state, i);
             }
             for (int j = 0; j < 10; j++) {
                 int tempState = state ^ (1 << j);
-                Integer tempPos = seen.get(tempState);
-                if (tempPos != null) {
-                    max = Math.max(max, i - tempPos);
+                pos = map.get(tempState);
+                if (pos != null) {
+                    max = Math.max(max, i - pos);
                 }
             }
         }

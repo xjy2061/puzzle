@@ -31,18 +31,19 @@ public class H5BinaryTreeMaxPathSum {
         }
 
         int[] ret = {Integer.MIN_VALUE};
-        maxPathSum(root, ret);
+        maxGain(root, ret);
         System.out.println(ret[0]);
     }
 
-    static int maxPathSum(Node node, int[] ret) {
+    static int maxGain(Node node, int[] ret) {
         if (node == null) {
             return 0;
         }
-        int left = Math.max(maxPathSum(node.left, ret), 0);
-        int right = Math.max(maxPathSum(node.right, ret), 0);
-        ret[0] = Math.max(ret[0], node.value + left + right);
-        return node.value + Math.max(left, right);
+        int lGain = Math.max(maxGain(node.left, ret), 0);
+        int rGain = Math.max(maxGain(node.right, ret), 0);
+        int pathSum = node.value + lGain + rGain;
+        ret[0] = Math.max(ret[0], pathSum);
+        return node.value + Math.max(lGain, rGain);
     }
 
     static class Node {

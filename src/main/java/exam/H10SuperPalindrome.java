@@ -16,6 +16,7 @@ public class H10SuperPalindrome {
         String[] input = scanner.nextLine().split(",");
         long l = Long.parseLong(input[0]);
         long r = Long.parseLong(input[1]);
+
         int limit = (int) Math.sqrt(r) + 1;
         ArrayList<Long> ret = new ArrayList<>();
         for (int i = 1; i < limit; i++) {
@@ -40,6 +41,6 @@ public class H10SuperPalindrome {
 
     static boolean isPalindrome(long p) {
         String s = Long.toString(p);
-        return s.contentEquals(new StringBuilder(s).reverse());
+        return s.equals(new StringBuilder(s).reverse().toString());
     }
 }

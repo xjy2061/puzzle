@@ -14,10 +14,10 @@ public class H6MaxIslandArea {
         String input = scanner.nextLine();
         String[] row = input.substring(1, input.length() - 1).split(";");
         int[][] grid = new int[row.length][];
-        for (int i = 0; i < grid.length; i++) {
+        for (int i = 0; i < row.length; i++) {
             String[] col = row[i].substring(1, row[i].length() - 1).split(",");
             grid[i] = new int[col.length];
-            for (int j = 0; j < grid[i].length; j++) {
+            for (int j = 0; j < col.length; j++) {
                 grid[i][j] = Integer.parseInt(col[j]);
             }
         }
@@ -25,7 +25,7 @@ public class H6MaxIslandArea {
         int max = 0;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
-                max = Math.max(dfs(grid, i, j), max);
+                max = Math.max(max, dfs(grid, i, j));
             }
         }
         System.out.println(max);
@@ -37,8 +37,8 @@ public class H6MaxIslandArea {
         }
         grid[i][j] = 0;
         int area = 1;
-        area += dfs(grid, i - 1, j);
         area += dfs(grid, i, j - 1);
+        area += dfs(grid, i - 1, j);
         area += dfs(grid, i, j + 1);
         area += dfs(grid, i + 1, j);
         return area;

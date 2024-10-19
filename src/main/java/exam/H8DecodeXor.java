@@ -16,7 +16,7 @@ public class H8DecodeXor {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");
         int[] encoded = new int[input.length];
-        for (int i = 0; i < encoded.length; i++) {
+        for (int i = 0; i < input.length; i++) {
             encoded[i] = Integer.parseInt(input[i]);
         }
 
@@ -26,7 +26,7 @@ public class H8DecodeXor {
             totalXor ^= i;
         }
         int encodedXor = 0;
-        for (int i = 1; i < n - 1; i += 2) {
+        for (int i = 1; i < encoded.length; i += 2) {
             encodedXor ^= encoded[i];
         }
         int first = totalXor ^ encodedXor;
@@ -35,13 +35,13 @@ public class H8DecodeXor {
         for (int i = 1; i < n; i++) {
             perm[i] = perm[i - 1] ^ encoded[i - 1];
         }
-        StringBuilder ret = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             if (i != 0) {
-                ret.append(",");
+                sb.append(",");
             }
-            ret.append(perm[i]);
+            sb.append(perm[i]);
         }
-        System.out.println(ret);
+        System.out.println(sb);
     }
 }
