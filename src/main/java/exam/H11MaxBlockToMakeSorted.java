@@ -11,18 +11,18 @@ public class H11MaxBlockToMakeSorted {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(" ");
         int[] arr = new int[input.length];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < input.length; i++) {
             arr[i] = Integer.parseInt(input[i]);
         }
 
         int[] leftMax = new int[arr.length];
-        int[] rightMin = new int[arr.length];
         leftMax[0] = arr[0];
         for (int i = 1; i < arr.length; i++) {
             leftMax[i] = Math.max(leftMax[i - 1], arr[i]);
         }
-        rightMin[arr.length - 1] = arr[arr.length -1];
-        for (int i = arr.length - 2; i >= 0 ; i--) {
+        int[] rightMin = new int[arr.length];
+        rightMin[arr.length - 1] = arr[arr.length - 1];
+        for (int i = arr.length - 2; i >= 0; i--) {
             rightMin[i] = Math.min(rightMin[i + 1], arr[i]);
         }
         int count = 0;

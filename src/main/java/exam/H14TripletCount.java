@@ -18,25 +18,25 @@ public class H14TripletCount {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");
         int[] nums = new int[input.length];
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < input.length; i++) {
             nums[i] = Integer.parseInt(input[i]);
         }
 
-        int[] count = new int[1 << 16];
+        int[] counts = new int[1 << 16];
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
                 int add = nums[i] & nums[j];
-                count[add]++;
+                counts[add]++;
             }
         }
-        int total = 0;
+        int ret = 0;
         for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < count.length; j++) {
+            for (int j = 0; j < counts.length; j++) {
                 if ((nums[i] & j) == 0) {
-                    total += count[j];
+                    ret += counts[j];
                 }
             }
         }
-        System.out.println(total);
+        System.out.println(ret);
     }
 }

@@ -10,16 +10,17 @@ public class H13LongestNonRepeatSubstring {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
-        int left = 0;
-        int max = 0;
+
         HashMap<Character, Integer> map = new HashMap<>();
-        for (int right = 0; right < s.length(); right++) {
-            char c = s.charAt(right);
-            if (map.containsKey(c)) {
-                left = map.get(c) + 1;
+        int max = 0;
+        for (int l = 0, r = 0; r < s.length(); r++) {
+            char c = s.charAt(r);
+            Integer pos = map.get(c);
+            if (pos != null) {
+                l = pos + 1;
             }
-            map.put(c, right);
-            max = Math.max(max, right - left + 1);
+            map.put(c, r);
+            max = Math.max(max, r - l + 1);
         }
         System.out.println(max);
     }

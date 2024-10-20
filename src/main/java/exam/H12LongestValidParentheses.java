@@ -10,6 +10,7 @@ public class H12LongestValidParentheses {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
+
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
         int max = 0;

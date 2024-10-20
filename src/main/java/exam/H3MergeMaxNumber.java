@@ -25,7 +25,7 @@ public class H3MergeMaxNumber {
         int m = nums1.length;
         int n = nums2.length;
         int[] max = new int[k];
-        for (int i = Math.max(0, k - n); i < Math.min(k, m); i++) {
+        for (int i = Math.max(0, k - n); i <= Math.min(k, m); i++) {
             int[] sub1 = maxSubArray(nums1, i);
             int[] sub2 = maxSubArray(nums2, k - i);
             int[] merged = merge(sub1, sub2);
