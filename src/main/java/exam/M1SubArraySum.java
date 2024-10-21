@@ -28,15 +28,15 @@ public class M1SubArraySum {
         map.put(0, -1);
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
-            sum %= k;
-            Integer pre = map.get(sum);
+            int mod = sum % k;
+            Integer pre = map.get(mod);
             if (pre != null) {
                 if (i - pre > 1) {
                     System.out.println(1);
                     return;
                 }
             } else {
-                map.put(sum, i);
+                map.put(mod, i);
             }
         }
         System.out.println(0);

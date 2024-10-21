@@ -9,12 +9,12 @@ public class E7MinCoinCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int count = -1;
+
         if (n == 0) {
-            System.out.println(count);
+            System.out.println(0);
             return;
         }
-        count = n / 5;
+        int count = n / 5;
         n %= 5;
         if (n == 0) {
             System.out.println(count);

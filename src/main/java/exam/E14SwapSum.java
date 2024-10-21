@@ -1,7 +1,6 @@
 package exam;
 
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 给定两个整数数组，请交换一对数值（每个数组中取一个数值），使得两个数组所有元素的和相等。
@@ -33,7 +32,13 @@ public class E14SwapSum {
             return;
         }
         delta = (s1 - s2) / 2;
+        Arrays.sort(array1);
+        HashSet<Integer> set1 = new HashSet<>();
         for (int a : array1) {
+            if (set1.contains(a)) {
+                continue;
+            }
+            set1.add(a);
             int b = (int) (a - delta);
             if (set2.contains(b)) {
                 System.out.println(a + " " + b);

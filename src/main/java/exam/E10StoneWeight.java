@@ -1,8 +1,6 @@
 package exam;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 有一堆石头，每块石头的重量都是正整数。
@@ -15,19 +13,20 @@ public class E10StoneWeight {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(",");
-        ArrayList<Integer> stones = new ArrayList<>();
+        LinkedList<Integer> stones = new LinkedList<>();
         for (String s : input) {
             stones.add(Integer.parseInt(s));
         }
+
         Collections.sort(stones);
         while (stones.size() > 1) {
-            int s1 = stones.remove(stones.size() - 1);
-            int s2 = stones.remove(stones.size() - 1);
+            int s1 = stones.removeLast();
+            int s2 = stones.removeLast();
             int remain = s1 - s2;
             if (remain == 0) {
                 continue;
-            } else if (!stones.isEmpty() && remain == stones.get(stones.size() - 1)) {
-                stones.remove(stones.size() - 1);
+            } else if (!stones.isEmpty() && remain == stones.peekLast()) {
+                stones.removeLast();
                 continue;
             }
             for (int i = 0, size = stones.size(); i < size; i++) {

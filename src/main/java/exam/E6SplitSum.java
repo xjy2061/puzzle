@@ -11,6 +11,7 @@ public class E6SplitSum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();
+
         ArrayList<ArrayList<Integer>> seqs = new ArrayList<>();
         int start = 1;
         int half = k / 2;
@@ -30,6 +31,15 @@ public class E6SplitSum {
             }
             start++;
         }
-        System.out.println(seqs);
+        for (ArrayList<Integer> seq : seqs) {
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < seq.size(); j++) {
+                if (j != 0) {
+                    sb.append(",");
+                }
+                sb.append(seq.get(j));
+            }
+            System.out.println(sb);
+        }
     }
 }

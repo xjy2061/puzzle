@@ -13,8 +13,8 @@ public class H1MergeLinkedList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split(" ");
-        String root1 = input[0];
-        String root2 = input[1];
+        String head1 = input[0];
+        String head2 = input[1];
         int n = Integer.parseInt(input[2]);
         HashMap<String, Node> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
@@ -23,13 +23,13 @@ public class H1MergeLinkedList {
         }
         ArrayList<Node> list1 = new ArrayList<>();
         ArrayList<Node> list2 = new ArrayList<>();
-        String addr = root1;
+        String addr = head1;
         while (!addr.equals("-1")) {
             Node node = map.get(addr);
             list1.add(node);
             addr = node.next;
         }
-        addr = root2;
+        addr = head2;
         while (!addr.equals("-1")) {
             Node node = map.get(addr);
             list2.add(node);
